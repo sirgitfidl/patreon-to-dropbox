@@ -1,0 +1,29 @@
+name: Patreon -> Dropbox
+
+on:
+  push:
+    branches: [ source ]
+  workflow_dispatch:
+  repository_dispatch:
+      types:
+      - Patreon -> Dropbox {webhook event}
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+    - run: npm ci
+    - run: node ./src/main.js
+      env:
+        PATREON_ACCESS_TOKEN: ${{ secrets.PATREON_ACCESS_TOKEN }}
+        DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+        DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+        DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        DROPBOX_REWARDS_DIR_NAME: ${{ secrets.DROPBOX_REWARDS_DIR_NAME }}
+        DROPBOX_TIERS_DIR_NAME: ${{ secrets.DROPBOX_TIERS_DIR_NAME }}
