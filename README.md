@@ -62,7 +62,7 @@ node ./main.js
 - If you see an `invalid_grant` error, that could be related to a bad refresh token, you may need to regenerate the token
 
 # FAQ
-- What happens if a patron doesn't have a Dropbox associated email account?
+- What happens if a patron doesn't have a Dropbox account?
   
   They'll be able to view and download any files shared even without a Dropbox account.
 
