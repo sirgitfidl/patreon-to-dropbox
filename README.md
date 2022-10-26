@@ -6,7 +6,7 @@ PATREON_TO_DROPBOX is a multi-API wrapper that provides a simple way to automate
 [Dropbox API docs](https://www.dropbox.com/developers/documentation/http/overview)
 
 # Quick Start
-(For local execution, use `.env_temp` to add environment variables using the parameters you gather below. Change filename to `.env` to use the environment variables)
+(local execution, use `.env_temp` to add environment variables using the parameters you gather below. Change filename to `.env` to use the environment variables)
 ## Patreon API Setup
 [Create/Get Patreon API Variable](https://www.patreon.com/portal/registration/register-clients)
 Filling out the fields in "Create Client" will result in creating; 

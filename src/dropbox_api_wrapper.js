@@ -125,6 +125,22 @@ async function getOwnerAccountId() {
 }
 
 /*
+* iterates over an array of folders and determines if a folder is shared
+*/
+export async function initializeFolderShare(FOLDERS_ARRAY) {
+    try {
+        // creates shared_folder_id for a folder if one doesn't exist
+        for (let i = 0; i < FOLDERS_ARRAY.length; i++) {
+            if (!FOLDERS_ARRAY[i].shared_folder_id) {
+                await initializeFolderSharing(FOLDERS_ARRAY[i].path_lower)
+            }
+        }
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+/*
 * creates a shared_folder_id for a folder
 */
 export async function initializeFolderSharing(folderPath, email) {
