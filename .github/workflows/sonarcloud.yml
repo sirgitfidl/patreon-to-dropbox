@@ -1,7 +1,6 @@
 name: SonarCloud Analysis
 
-on:
-  pull_request:
+on: push
 
 permissions:
   pull-requests: read
