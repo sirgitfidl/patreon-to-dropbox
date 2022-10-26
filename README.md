@@ -19,7 +19,7 @@ Following all steps provided in the link will result in creating;
 - `DROPBOX_APP_SECRET`
 - `DROPBOX_ACCESS_TOKEN`
 
-[This is an excellent video guide](https://www.youtube.com/watch?v=AzCQrjWQJs4&ab_channel=freeCodeCamp.org)
+[An excellent video guide](https://www.youtube.com/watch?v=AzCQrjWQJs4&ab_channel=freeCodeCamp.org)
 
 ## Dropbox Refresh Token
 [Dropbox Oauth Docs](https://developers.dropbox.com/oauth-guide)
