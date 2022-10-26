@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import { setTiers, getPatronIdsByTier, getPatronEmail, getCampaignId } from './patreon_api_wrapper.js'
 import { rewardAccessCoordination, setRewardFolderAccess, tierAccessCoordination } from './tier_based_access.js'
-import { getChildFolders, initializeFolderSharing, removeFormerPatrons } from './dropbox_api_wrapper.js'
+import { getChildFolders, initializeFolderShare, removeFormerPatrons } from './dropbox_api_wrapper.js'
 
 dotenv.config()
 
@@ -23,19 +23,6 @@ async function coordinateDropboxPermissions(TIER_NUM, EMAILS, TIER_FOLDERS_ARRAY
         if (EMAILS.length > 0) {
             await removeFormerPatrons(TIER_FOLDERS_ARRAY, EMAILS)
             await removeFormerPatrons(REWARD_FOLDERS_ARRAY, EMAILS)
-        }
-    } catch (error) {
-        console.error(error.message);
-    }
-}
-
-async function initializeFolderShare(FOLDERS_ARRAY) {
-    try {
-        // creates shared_folder_id for a folder if one doesn't exist
-        for (let i = 0; i < FOLDERS_ARRAY.length; i++) {
-            if (!FOLDERS_ARRAY[i].shared_folder_id) {
-                await initializeFolderSharing(FOLDERS_ARRAY[i].path_lower)
-            }
         }
     } catch (error) {
         console.error(error.message);
