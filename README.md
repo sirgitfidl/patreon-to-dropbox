@@ -17,7 +17,6 @@ Filling out the fields in "Create Client" will result in creating;
 Following all steps provided in the link will result in creating; 
 - `DROPBOX_APP_KEY`
 - `DROPBOX_APP_SECRET`
-- `DROPBOX_ACCESS_TOKEN`
 
 [An excellent video guide](https://www.youtube.com/watch?v=AzCQrjWQJs4&ab_channel=freeCodeCamp.org)
 
